@@ -10,5 +10,6 @@ export default defineConfig({
       assets: '/src/assets',
       styles: '/src/styles'
     }
-  }
+  },
+  base: "/project-react-1/"
 })
