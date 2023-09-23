@@ -47,6 +47,7 @@ export const FormInputStyled = styled.div`
     background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
+    width: 100%;
   }
 
   span {

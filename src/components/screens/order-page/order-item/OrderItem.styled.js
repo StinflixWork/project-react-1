@@ -10,6 +10,19 @@ export const OrderItemStyled = styled.div`
   background-color: ${props => props.theme.colors.bgSecondary};
   border: 1px solid #1E2423;
   border-radius: 3px;
+  position: relative;
+
+  @media(width <= 768px) {
+    flex-direction: column;
+    width: auto;
+  }
+`
+
+export const OrderItemRemoveButton = styled.button`
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: transparent;
 `
 
 export const OrderItemImg = styled.div`
@@ -23,6 +36,11 @@ export const OrderItemContent = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
+
+  @media(width <= 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `
 export const OrderItemInfo = styled.div`
   h5 {
@@ -61,6 +79,7 @@ export const OrderItemButtons = styled.div`
 
   @media(width <= 768px) {
     justify-content: center;
+    flex-direction: column;
   }
 `
 
@@ -100,5 +119,10 @@ export const OrderItemAllPrice = styled.div`
       margin-right: 10px;
       letter-spacing: 1px;
     }
+  }
+
+  @media(width <= 768px) {
+    border: 0;
+    margin: 0;
   }
 `

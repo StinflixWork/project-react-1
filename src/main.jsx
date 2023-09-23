@@ -5,7 +5,9 @@ import {Provider} from "react-redux";
 import store from './store/store.js'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-AOS.init();
+AOS.init({
+    duration: 1200,
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>

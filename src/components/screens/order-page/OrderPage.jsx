@@ -1,10 +1,11 @@
 import {
+    OrderBody,
     OrderContent,
     OrderHeader,
     OrdersList,
     WrapperOrder
 } from "./OrderPage.styled.js";
-import {ContainerFlexRow} from "styles/Container.styled.js";
+import {ContainerFlexRow, Container} from "styles/Container.styled.js";
 import {BiArrowBack} from "react-icons/bi";
 import {NavLink} from "react-router-dom";
 import OrderItem from "components/screens/order-page/order-item/OrderItem.jsx";
@@ -38,12 +39,14 @@ const OrderPage = () => {
                 </ContainerFlexRow>
             </OrderHeader>
             <OrderContent>
-                <ContainerFlexRow justify='space-between' gap={50}>
-                    <OrdersList>
-                        {ordersItems.length ? ordersItems : <p>No orders</p>}
-                    </OrdersList>
-                    <FormOrder price={ordersData.priceToPay} handleSubmitOrder={handleSubmitOrder}/>
-                </ContainerFlexRow>
+                <Container>
+                    <OrderBody>
+                        <OrdersList>
+                            {ordersItems.length ? ordersItems : <p>No orders. <NavLink to='/catalog'>Check out our menu</NavLink></p>}
+                        </OrdersList>
+                        <FormOrder price={ordersData.priceToPay} handleSubmitOrder={handleSubmitOrder}/>
+                    </OrderBody>
+                </Container>
             </OrderContent>
         </WrapperOrder>
     );

@@ -16,7 +16,10 @@ const AboutSection = () => {
     return (
         <WrapperAboutSection>
             <ContainerFlexRow alignItems='center' gap={70}>
-                <AboutImage data-aos="fade-right">
+                <AboutImage
+                    data-aos="fade-right"
+
+                >
                     <img src={AboutImage1} alt="cafe"/>
                 </AboutImage>
                 <AboutBody>

@@ -3,12 +3,13 @@ import {
     OrderItemButtons,
     OrderItemContent, OrderItemCounters,
     OrderItemImg,
-    OrderItemInfo,
+    OrderItemInfo, OrderItemRemoveButton,
     OrderItemStyled
 } from "./OrderItem.styled.js";
 import {AiOutlineMinusCircle, AiOutlinePlusCircle} from "react-icons/ai";
-import {changeCount} from "../../../../store/features/catalogSlice.js";
+import {changeCount, removeOrder} from "../../../../store/features/catalogSlice.js";
 import {useSelector} from "react-redux";
+import {CiCircleRemove} from "react-icons/ci";
 
 const OrderItem = ({order, dispatch}) => {
     const product = useSelector(state => state.catalog.products.find(p => p.id === order.idProduct))
@@ -18,6 +19,10 @@ const OrderItem = ({order, dispatch}) => {
 
     const handleClickDecrement = () => {
         dispatch(changeCount({id: order.id, type: 'decrement'}))
+    }
+
+    const handleRemoveOrder = () => {
+        dispatch(removeOrder(order.id))
     }
 
     return (
@@ -45,6 +50,9 @@ const OrderItem = ({order, dispatch}) => {
                     </button>
                 </OrderItemCounters>
             </OrderItemButtons>
+            <OrderItemRemoveButton onClick={handleRemoveOrder}>
+                <CiCircleRemove color='#fff' size={32} />
+            </OrderItemRemoveButton>
         </OrderItemStyled>
     );
 };

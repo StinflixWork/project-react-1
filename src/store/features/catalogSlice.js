@@ -63,6 +63,9 @@ export const catalogSlice = createSlice({
             }
             state.orders.ordersList.push(createNewOrder);
         },
+        removeOrder: (state, {payload: orderId}) => {
+            state.orders.ordersList = state.orders.ordersList.filter(order => order.id !== orderId);
+        },
         setPriceToPay: (state) => {
             const orders = state.orders.ordersList;
 
@@ -102,5 +105,5 @@ export const catalogSlice = createSlice({
     }
 })
 
-export const {addToOrder, setPriceToPay, changeCount, submitOrderToBD, filterCatalog} = catalogSlice.actions;
+export const {addToOrder, removeOrder, setPriceToPay, changeCount, submitOrderToBD, filterCatalog} = catalogSlice.actions;
 export default catalogSlice.reducer;
