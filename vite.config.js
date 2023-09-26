@@ -8,7 +8,8 @@ export default defineConfig({
     alias: {
       components: '/src/components',
       assets: '/src/assets',
-      styles: '/src/styles'
+      styles: '/src/styles',
+      store: '/src/store'
     }
   },
   base: "/project-react-1/"
